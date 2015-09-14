@@ -1,2 +1,3 @@
 # Final-Project
-An events finder based on your mood swings
+
+WDI Project 3

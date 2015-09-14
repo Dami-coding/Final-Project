@@ -1,48 +1,46 @@
-(function() {
-  'use strict';
+var express     = require('express');
+var app         = express();
+var bodyParser  = require('body-parser');
+var logger      = require('morgan');
+var router      = express.Router();
+var path        = require('path');
+var morgan      = require('morgan')
+var request     = require('request');
+var mongoose    = require('mongoose');
+var databaseURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/swingy'
+mongoose.connect(databaseURL);
 
-  angular
-  .module('statusApp', ['firebase', 'ngMaterial', 'angular-md5', 'ui.router'])
-  .config(function($stateProvider, $urlRouterProvider) {
-    // Setting up the rules for UI Router to handle different states
 
-    // If a route other than status is requested go to the auth route
-    $urlRouterProvider.otherwise('/auth');
 
-    $stateProvider
-    .state('auth', {
-      url: '/auth',
-      templateUrl: 'components/auth/authView.html',
-      // Setting controller and giving it a name for the auth page
-      controller: 'AuthController as auth'
-    })
-    .state('status', {
-      url: '/status',
-      templateUrl: 'components/status/statusView.html',
-      // Setting controller and giving it a name for the status page
-      controller: 'StatusController as status'
-    });
-  })
 
-  // Listening for changes to the app’s state and using the User service to get the currently logged-in user
-  // Using data that Firebase keeps in local storage for the user with the specified key
-  // If data exists, call the getUserData method on the User service and pass in the uid
-  // The Data returned is placed on the loggedInUserData property of $rootScope, which can be accessed across the app
-  .run(function($rootScope, $state, User) {
+app.listen(3000, function(){
+  console.log("running on 3000");
+});
 
-    // Listen for changes to the state and run the code in the callback when the change happens
-    $rootScope.$on('$stateChangeStart', function() {
+app.get('/', function(req, res){
 
-      // Use the User factory service to get the currently logged-in user from local storage
-      var loggedInUser = User.getLoggedInUser();
+  var token = process.env.EVENTBRITE_SWINGY_API;
 
-      // Check that a logged-in user is actually saved in local storage
-      if(loggedInUser) {
+  // console.log(res);
 
-        // Use getUserData method on the User service to grab data from the /users endpoint in Firebase for the logged-in user
-        $rootScope.loggedInUserData = User.getUserData(loggedInUser.uid);
-      }
-    });
-  });
+  request("https://www.eventbriteapi.com/v3/events/search/?q=node"+ "?token="+ token), function(err, response, body){
+    if (err && response.statusCode === 200){
+      console.log(body);
+    } else {
+      console.log(err);
+    }
 
-})();
+  };
+
+
+})
+
+
+
+
+
+module.exports = router
+
+
+
+

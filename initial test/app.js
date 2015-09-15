@@ -2,7 +2,6 @@ var express     = require('express');
 var app         = express();
 var bodyParser  = require('body-parser');
 var logger      = require('morgan');
-// var router      = express.Router();
 var path        = require('path');
 var morgan      = require('morgan')
 var request     = require('request');
@@ -55,6 +54,14 @@ app.get('/events', function(req, res){
 
 // GEEKY
 // -> 80,56,67 etc...
+
+// FUN
+// -> 
+
+// SOCIAL
+
+
+// 
 
 // Render the index page so that we can put Angular on it
 app.get("/", function(req, res) {

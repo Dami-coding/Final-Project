@@ -6,36 +6,36 @@ function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('signup', {
       url: "/signup",
-      templateUrl: "templates/homepage/signup.html"
+      templateUrl: "templates/home/signup.ejs"
     })
     .state('login', {
       url: "/login",
-      templateUrl: "templates/homepage/login.html"
+      templateUrl: "templates/home/login.ejs"
     })
-    .state('homepage', {
-      templateUrl: "templates/homepage/homepage.html",
+    .state('home', {
+      templateUrl: "templates/home/home.ejs",
       url: "/"
     })
-    .state('newHunt', {
-      url: "/hunts/new",
-      templateUrl: "templates/hunts/new.html"
+    .state('newEvent', {
+      url: "/events/new",
+      templateUrl: "templates/events/new.ejs"
     })
     .state('newTask', {
-      url: "/hunts/:hunt_id/tasks/new",
-      templateUrl: "templates/tasks/new.html"
+      url: "/events/:hunt_id/tasks/new",
+      templateUrl: "templates/tasks/new.ejs"
     })
     .state('showTask', {
-      url: "/hunts/:hunt_id/tasks/:id",
-      templateUrl: "templates/tasks/show.html"
+      url: "/events/:hunt_id/tasks/:id",
+      templateUrl: "templates/tasks/show.ejs"
     })
   
     .state('showHunt', {
-      url: "/hunts/:id",
-      templateUrl: "templates/hunts/show.html"
+      url: "/events/:id",
+      templateUrl: "templates/events/show.ejs"
     })
     .state('indexHunt', {
-      url: "/hunts",
-      templateUrl: "templates/hunts/index.html"
+      url: "/events",
+      templateUrl: "templates/events/index.ejs"
     });
 
   $urlRouterProvider.otherwise("/");

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var Task     = require('./task');
-var User     = require('./user')
+
+var Schema = mongoose.Schema;
 
 var UserSchema = new mongoose.Schema({
     name     : String,

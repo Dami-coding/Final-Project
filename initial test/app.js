@@ -5,18 +5,32 @@ var logger      = require('morgan');
 var path        = require('path');
 var morgan      = require('morgan')
 var request     = require('request');
+var passport    = require('passport');
+
 var mongoose    = require('mongoose');
 var databaseURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/swingy'
 
+var Event = require('./models/event');
+var User = require('./models/user');
+
 // Setup views
 app.set("view engine", "ejs");
-app.set("views", "./views")
+app.set("views", "./views");
+
+
+app.use(require("./controllers"));
 
 // Setup public folder to serve angular files
 app.use(express.static(__dirname + "/public"))
 
 // Setting up Mongoose
 mongoose.connect(databaseURL);
+
+
+// Serving bower_components from root. Might change to public later
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+
+
 
 // To search for a list of categories/subcategories, use:
 // https://www.eventbriteapi.com/v3/categories/?token=(token) <- need to add token

@@ -1,9 +1,23 @@
 <header>
-  <nav>
-    <ul>
-      <li><a href="/#/">Home</a></li>
-      <li><a href="/#/hunts">Hunts</a></li>
-      <li><a href="/#/hunts/new">Create a Hunt</a></li>
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">Swingy</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/event">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
     </ul>
+    <form class="form-inline navbar-form pull-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-success-outline" type="submit">Search</button>
+    </form>
   </nav>
 </header>

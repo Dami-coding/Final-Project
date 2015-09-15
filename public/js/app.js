@@ -6,37 +6,20 @@ function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('signup', {
       url: "/signup",
-      templateUrl: "templates/home/signup.ejs"
+      templateUrl: "templates/home/signup.html"
     })
     .state('login', {
       url: "/login",
-      templateUrl: "templates/home/login.ejs"
+      templateUrl: "templates/home/login.html"
     })
     .state('home', {
-      templateUrl: "templates/home/home.ejs",
+      templateUrl: "templates/home/home.html",
       url: "/"
     })
     .state('newEvent', {
       url: "/events/new",
-      templateUrl: "templates/events/new.ejs"
+      templateUrl: "templates/events/new.html"
     })
-    .state('newTask', {
-      url: "/events/:hunt_id/tasks/new",
-      templateUrl: "templates/tasks/new.ejs"
-    })
-    .state('showTask', {
-      url: "/events/:hunt_id/tasks/:id",
-      templateUrl: "templates/tasks/show.ejs"
-    })
-  
-    .state('showHunt', {
-      url: "/events/:id",
-      templateUrl: "templates/events/show.ejs"
-    })
-    .state('indexHunt', {
-      url: "/events",
-      templateUrl: "templates/events/index.ejs"
-    });
 
   $urlRouterProvider.otherwise("/");
 }

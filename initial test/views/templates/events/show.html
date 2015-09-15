@@ -1,0 +1,16 @@
+<div ng-controller="HuntsController as hunts">
+<h2>{{hunts.hunt.name}}</h2>
+<h3>{{hunts.hunt.tagline}}</h3>
+<p>
+Price: £ {{hunts.hunt.price}}
+</p>
+<p>
+  {{hunts.hunt.description}}
+</p>
+<ul>
+  <li ng-repeat="task in hunts.hunt.tasks">
+    <span>{{task.title}}</span>
+  </li>
+</ul>
+<a href="#/hunts/{{hunts.hunt._id}}/tasks/new">Add Task</a>
+</div>

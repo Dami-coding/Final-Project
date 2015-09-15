@@ -1,0 +1,26 @@
+<div ng-controller="HuntsController as hunts">
+
+<h1>new-hunt</h1>
+
+<form ng-submit="hunts.createHunt()">
+  <label for="name">Name:</label>
+  <input type="text" name="name" ng-model="hunts.newHunt.name">
+  <label for="tagline">Tagline:</label>
+  <input type="text" name="name" ng-model="hunts.newHunt.tagline">
+  <label for="description">Description:</label>
+  <input type="text" name="description" ng-model="hunts.newHunt.description">
+  <label for="location">Location:</label>
+  <input type="text" name="location" ng-model="hunts.newHunt.location">
+  <label for="password">Password:</label>
+  <input type="password" name="password" ng-model="hunts.newHunt.password">
+  <label for="start_time">starts:</label>
+  <input type="text" name="start_time" ng-model="hunts.newHunt.start_time">
+  <label for="end_time">Ends:</label>
+  <input type="text" name="end_time" ng-model="hunts.newHunt.end_time">
+  
+
+  <label for="price">Price:</label>
+  <input type="number" name="price" ng-model="hunts.newHunt.price">
+  <button type="submit">Create Hunt</button>
+</form>
+  </div>

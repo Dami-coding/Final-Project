@@ -39,7 +39,7 @@ router.delete('/:id', function(req, res){
   var id = req.params.id;
   User.findById(id, function(error, user){
     for (var i = 0; i < user.events.length; i++) {
-      Task.remove({_id: user.events[i]}, function(){});
+      User.remove({_id: user.events[i]}, function(){});
     }
     User.remove({_id: id}, function(error){
       if (error) res.status(404).send({message: 'No user with that ID. Could not delete.'})

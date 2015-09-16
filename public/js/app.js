@@ -19,10 +19,11 @@ function MainRouter($stateProvider, $urlRouterProvider){
       url: "/",
       templateUrl: "../templates/home/home.html"
     })
-    .state('newEvent', {
+    .state('events', {
       url: "/events/index",
       templateUrl: "../templates/events/index.html"
     })
+
 
   $urlRouterProvider.otherwise("/");
 }

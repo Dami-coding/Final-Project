@@ -19,6 +19,10 @@ function MainRouter($stateProvider, $urlRouterProvider){
       url: "/",
       templateUrl: "../templates/home/home.html"
     })
+    .state('about', {
+      url: "/about/about",
+      templateUrl: "../templates/about/about.html"
+    })
     .state('events', {
       url: "/events/index",
       templateUrl: "../templates/events/index.html"
@@ -26,4 +30,18 @@ function MainRouter($stateProvider, $urlRouterProvider){
 
 
   $urlRouterProvider.otherwise("/");
+
+
+
+
+
+ $stateProvider.customStyle = {};
+ $stateProvider.turnGreen = function (){
+    $stateProvider.customStyle.colorClass = "green";
+}
+
+$stateProvider.turnBlue = function() {
+    $stateProvider.customStyle.colorClass = "blue";
+}
+
 }

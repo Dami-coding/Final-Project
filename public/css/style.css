@@ -5,15 +5,11 @@ html,body {
 h1 {
   font-family: Arial,sans-serif
   font-size:80px;
-  color:#DDCCEE;
+  color:white;
+  text-align: center;
+  top: 100px;
 }
 
-.lead {
-  color:#DDCCEE;
-}
-
-
-/* Custom container */
 .container-full {
   margin: 0 auto;
   width: 100%;
@@ -23,12 +19,13 @@ h1 {
   overflow:hidden;
 }
 
-.container-full a {
-  color:#efefef;
-  text-decoration:none;
+.green{
+  color:green;
+}
+.blue{
+  color:blue;
 }
 
-.v-center {
-  margin-top:7%;
+img{
+  width: 500px;
 }
-  

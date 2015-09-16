@@ -15,7 +15,7 @@ router.post('/signup', function(req, res, next) {
 
     return res.status(200).send({ 
       success: true,
-      message: "The Hunt is on.",
+      message: "Thank you for signing up",
       token: token
     });
   })(req, res, next);

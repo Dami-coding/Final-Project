@@ -5,6 +5,8 @@ angular
     $httpProvider.interceptors.push('authInterceptor');
   })
 
+  
+
 function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('signup', {
@@ -15,8 +17,12 @@ function MainRouter($stateProvider, $urlRouterProvider){
       url: "/login",
       templateUrl: "../templates/home/login.html"
     })
+    .state('landingpage', {
+      url: "home/landingpage",
+      templateUrl: "../templates/home/landingpage.html"
+    })
     .state('home', {
-      url: "/",
+      url: "/home",
       templateUrl: "../templates/home/home.html"
     })
     .state('about', {

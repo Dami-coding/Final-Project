@@ -13,8 +13,8 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: "templates/home/login.html"
     })
     .state('home', {
-      templateUrl: "templates/home/home.html",
-      url: "/"
+      url: "/",
+      templateUrl: "templates/home/home.html"
     })
     .state('newEvent', {
       url: "/events/new",

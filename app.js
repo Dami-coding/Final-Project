@@ -14,11 +14,9 @@ var Event = require('./models/event');
 var User = require('./models/user');
 
 // Setup views
-app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", "./public");
+app.engine('html', require('ejs').renderFile);
 
-
-app.use(require("./controllers"));
 
 // Setup public folder to serve angular files
 app.use(express.static(__dirname + "/public"))
@@ -29,7 +27,7 @@ mongoose.connect(databaseURL);
 
 // Serving bower_components from root. Might change to public later
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
-
+app.use(require("./controllers"));
 
 
 // To search for a list of categories/subcategories, use:
@@ -85,12 +83,6 @@ app.get('/events', function(req, res){
 // BOREDOM
 // -> 1999,2999,3001,
 
-
-
-// Render the index page so that we can put Angular on it
-app.get("/", function(req, res) {
-  res.render("index");
-})
 
 // Listen for things happening on the app
 app.listen(3000, function(){

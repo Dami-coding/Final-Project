@@ -16,7 +16,7 @@ module.exports = function(passport) {
 
         var newUser       = new User();
         newUser.email     = email;
-        newUser.full_name = req.body.full_name;
+        newUser.name      = req.body.name;
         newUser.password  = newUser.encrypt(password);
         newUser.save(function(err) {
           if (err) return done(err);

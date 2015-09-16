@@ -7,6 +7,7 @@ var router   = express.Router();
 
 router.post('/signup', function(req, res, next) {
   passport.authenticate('local-signup', function(err, user, info) {
+    console.log(user)
     if (err) return res.status(500).send(err);
     if (!user) return res.status(401).send({ error: 'User already exists!' });
 
@@ -22,7 +23,7 @@ router.post('/signup', function(req, res, next) {
 
 router.post('/signin', function(req, res, next) {
   User.findOne({
-    codename: req.body.codename
+    email: req.body.email
   }, function(err, user) {
     if (err) return res.status(500).send(err);
 

@@ -1,5 +1,10 @@
-<main>
-<h1>Login</h1>
-<hr>
-  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error reprehenderit corporis ducimus unde debitis inventore, odit sunt recusandae assumenda tempore nemo nobis, numquam asperiores qui nihil illo reiciendis dolorum quidem!</h2>
-</main>
+<h3>Login</h3>
+<form id="signin" ng-hide="users.isLoggedIn()" ng-submit="users.signin()">
+  <label for="email">Email</label>
+  <input type="text" name="email" placeholder="What is your email?" ng-model="users.user.email">
+
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="What is your password?" ng-model="users.user.password">
+
+  <input type="submit" value="Access">
+</form>

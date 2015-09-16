@@ -6,9 +6,14 @@ var path        = require('path');
 var morgan      = require('morgan')
 var request     = require('request');
 var passport    = require('passport');
+var expressJWT  = require("express-jwt");
+var config      = require("./config/config");
+
 
 var mongoose    = require('mongoose');
 var databaseURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/swingy'
+
+require('./config/passport')(passport);
 
 var Event = require('./models/event');
 var User = require('./models/user');
@@ -61,6 +66,29 @@ app.get('/events', function(req, res){
   })
 });
 
+// JWT access control. Important to have these before our routes!
+
+// app
+//   .use('/api', expressJWT({secret: config.secret})
+//   .unless({path: ['/api/signin', '/api/signup'], method: 'post'}));
+
+// // Handle "No authorization token was found" errors
+// app.use(function (error, request, response, next) {
+//   if (error.name === 'UnauthorizedError') {
+//     response.status(401).json({message: 'You need an authorization token to view confidential information.'});
+//   }
+// });
+
+
+
+
+// Listen for things happening on the app
+app.listen(3000, function(){
+  console.log("Swingy up and running on 3000...");
+});
+
+
+
 // HAPPY
 // -> 104,105,103,107,108,111,114,115,106,117
 // -> 1009,2006,3002,3003,3004,3005,3005,3006,
@@ -84,7 +112,3 @@ app.get('/events', function(req, res){
 // -> 1999,2999,3001,
 
 
-// Listen for things happening on the app
-app.listen(3000, function(){
-  console.log("Swingy up and running on 3000...");
-});

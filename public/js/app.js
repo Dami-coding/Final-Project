@@ -18,11 +18,11 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: "../templates/home/login.html"
     })
     .state('landingpage', {
-      url: "home/landingpage",
-      templateUrl: "../templates/home/landingpage.html"
+      url: "/landingpage/index",
+      templateUrl: "../templates/landingpage/index.html"
     })
     .state('home', {
-      url: "/home",
+      url: "/",
       templateUrl: "../templates/home/home.html"
     })
     .state('about', {

@@ -8,14 +8,20 @@
       <li class="nav-item">
         <a class="nav-link" href="#/about/about">About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" ng-show="users.isLoggedIn()">
         <a class="nav-link" href="#/events/show">Events</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" ng-hide="users.isLoggedIn()">
         <a class="nav-link" href="#/signup">Signup</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" ng-hide="users.isLoggedIn()">
         <a class="nav-link" href="#/login">Login</a>
+      </li>
+      <li class="nav-item" ng-show="users.isLoggedIn()">
+        Hello, {{ users.user.name }}!
+      </li>
+      <li class="nav-item" ng-show="users.isLoggedIn()">
+        <a class="nav-link" ng-click="users.logout()">Logout</a>
       </li>
     </ul>
     <form class="form-inline navbar-form pull-right">

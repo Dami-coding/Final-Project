@@ -9,7 +9,7 @@ function AuthInterceptor(API, TokenService) {
   // response: Checks if an incoming HTTP response has a token
 
   return {
-    
+  
     request: function(config) {
       var token = TokenService.getToken();
 

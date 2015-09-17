@@ -1,7 +1,8 @@
 angular
   .module('swingy', ['angular-jwt','ui.router', 'ngResource'])
-  .constant('API', 'http://localhost:3000/api/auth')
-  .config(MainRouter, function($httpProvider) {
+  .constant('API', 'http://localhost:3000/api/')
+  .config(MainRouter)
+  .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   })
 

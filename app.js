@@ -9,9 +9,10 @@ var passport    = require('passport');
 var expressJWT  = require("express-jwt");
 var config      = require("./config/config");
 
-
+// Setup mongoose
 var mongoose    = require('mongoose');
 var databaseURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/swingy'
+mongoose.connect(databaseURL);
 
 require('./config/passport')(passport);
 
@@ -22,13 +23,14 @@ var User = require('./models/user');
 app.set("views", "./public");
 app.engine('html', require('ejs').renderFile);
 
-
 // Setup public folder to serve angular files
 app.use(express.static(__dirname + "/public"))
 
-// Setting up Mongoose
-mongoose.connect(databaseURL);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
+// parse application/json
+app.use(bodyParser.json())
 
 // Serving bower_components from root. Might change to public later
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -78,9 +80,6 @@ app.get('/events', function(req, res){
 //     response.status(401).json({message: 'You need an authorization token to view confidential information.'});
 //   }
 // });
-
-
-
 
 // Listen for things happening on the app
 app.listen(3000, function(){

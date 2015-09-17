@@ -14,19 +14,19 @@ function UserController(User, TokenService){
     var token = res.token ? res.token : null;
     
     // Console.log our response from the API
-    if(token) { console.log(res); }
+    if(token) { console.log("In userController", res); }
     self.message =  res.message ? res.message : null;
   }
 
   self.signup = function() {
-    User.signup(self.agent, showMessage);
+    User.signup(self.user, showMessage);
   }
 
   self.signin = function() {
-    User.signin(self.agent, showMessage);
+    User.signin(self.user, showMessage);
   }
 
-  self.disappear = function() {
+  self.logout = function() {
     TokenService.removeToken && TokenService.removeToken();
   }
 
@@ -39,10 +39,10 @@ function UserController(User, TokenService){
   }
 
   // Load agents only if you are logged in!
-  if (self.isLoggedIn()) {
-    self.getUsers();
-    self.agent = TokenService.parseJwt();
-  }
+  // if (self.isLoggedIn()) {
+  //   self.getUsers();
+  //   self.user = TokenService.parseJwt();
+  // }
 
   return self;
 

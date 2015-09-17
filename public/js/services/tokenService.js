@@ -13,15 +13,15 @@ function TokenService($window, jwtHelper) {
   }
 
   self.saveToken = function(token) {
-    $window.localStorage['secret-handshake'] = token;
+    $window.localStorage['swingy-token'] = token;
   }
 
   self.getToken = function() {
-    return $window.localStorage['secret-handshake'];
+    return $window.localStorage['swingy-token'];
   }
 
   self.removeToken = function() {
-    $window.localStorage.removeItem('secret-handshake');
+    $window.localStorage.removeItem('swingy-token');
   }
 
   self.isLoggedIn = function() {

@@ -13,10 +13,12 @@
   <script type="text/javascript" src="./bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  
+
+
   <!-- EXTERNAL STYLESHEETS -->
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../bower_components/animate.css/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"> -->
   <link rel="stylesheet" href="../css/style.css">
 
   <!-- INTERNAL SCRIPTS -->
@@ -30,7 +32,7 @@
 
 <body ng-controller="usersController as users">
   <div ng-include="'./templates/shared/header.html'"></div>
-  <div ui-view class="container"></div>
+  <div ui-view></div>
   <div ng-include="'./templates/shared/footer.html'"></div>
 </body>
 </html>

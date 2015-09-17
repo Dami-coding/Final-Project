@@ -1,109 +1,41 @@
 <section ng-controller="eventsController as events">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Let Swingy handle it</h2>
-      <div id="custom-search-input">
-        <div class="input-group col-md-12">
-          <input type="text" class="form-control input-lg" placeholder="find an Event" ng-model="events.query"/>
+
+  <div class="row animated fadeInUp">
+    <h2>Let Swingy handle it</h2>
+    <form ng-submit="events.search(events.query)">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Find an event!" ng-model="events.query">
           <span class="input-group-btn">
-            <button class="btn btn-info btn-lg" type="button" ng-click="events.search(events.query)">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
+            <button class="btn btn-secondary" type="button">Go!</button>
           </span>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
+<div class="animated fadeInUp">
   <a ng-click="events.filter('happy')">Happy</a>
   <a ng-click="events.filter('fun')">Fun</a>
   <a ng-click="events.filter('serious')">Serious</a>
   <a ng-click="events.filter('geeky')">Geeky</a>
   <a ng-click="events.filter('inspire')">Inspire</a>
-
-  <div class="row">
-
+  </div>
+  <div class="container-fluid">
     <div class="progress" ng-show="events.searching">
       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
         <span class="sr-only">45% Complete</span>
       </div>
     </div>
-
-    <div class="media" ng-repeat="event in events.all | unique: 'name.text'">
-      <div class="media-left">
-        <a href="{{event.url}}">
-          <img class="media-object" ng-src="{{event.logo.url}}" alt="{{event.name.text}}">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{event.name.text}}</h4>
-        {{event.description.text | limitTo: 1000 }}
+    <div class="row">
+      <div class="card col-sm-6 col-md-6 col-lg-4" ng-repeat="event in events.all | unique: 'name.text'">
+        <img class="card-img-top" ng-src="{{ event.logo.url }}" alt="{{ event.name.text }}">
+        <div class="card-block">
+          <h4 class="card-title">{{ event.name.text | limitTo: 10 }}</h4>
+          <p class="card-text">{{ event.description.text | limitTo: 50 }}</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- capacity: 20
-category_id: "115"
-changed: "2015-09-17T12:26:44Z"
-created: "2015-09-16T11:11:39Z"
-currency: "GBP"
-description: {,…}
-end: {timezone: "Europe/London", local: "2015-10-04T17:30:00", utc: "2015-10-04T16:30:00Z"}
-format_id: "2"
-id: "18648288533"
-logo: {id: "15503673",…}
-logo_id: "15503673"
-name: {text: "Drama Teaching for Actors", html: "Drama Teaching for Actors"}
-online_event: false
-organizer_id: "8463335528"
-resource_uri: "https://www.eventbriteapi.com/v3/events/18648288533/"
-shareable: true
-start: {timezone: "Europe/London", local: "2015-10-04T14:30:00", utc: "2015-10-04T13:30:00Z"}
-status: "live"
-subcategory_id: "15005"
-tx_time_limit: 480
-url: "http://www.eventbrite.com/e/drama-teaching-for-actors-tickets-18648288533?aff=ebapi"
-venue_id: "11477727" -->
-
-<!-- <div class="row animated fadeIn" id="event">
-  <div class="col-md-3">
-   <div class="thumbnail">
-      <img id="icon" src="../images/logo.png" width="300px" alt="...">
-      <div class="caption text-center">
-        <h4>Social Events</h4>
-        <p> Swingy is an amazing app that finds the kind of event and social meet ups with friends that is suited for your moods. </p>
-       <span class="label label-pill label-success">Accept</span>
-       <span class="label label-pill label-danger" href="#">Decline</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row animated fadeIn" id="event">
- <div class="col-sm-3">
-   <div class="thumbnail">
-     <img id="icon" src="../images/logo.png" width="300px" alt="...">
-     <div class="caption text-center">
-       <h4>Social fun</h4>
-       <p> Swingy is an amazing app that finds the kind of event and social meet ups with friends that is suited for your moods. </p>
-       <span class="label label-pill label-success">Accept</span>
-       <span class="label label-pill label-danger">Decline</span>
-     </div>
-   </div>
- </div>
-</div>
-
-<div class="row animated fadeIn" id="event">
- <div class="col-md-3">
-   <div class="thumbnail">
-     <img id="icon" src="../images/logo.png" width="300px" alt="...">
-     <div class="caption text-center">
-       <h4>Health and lifestyle</h4>
-       <p> Swingy is an amazing app that finds the kind of event and social meet ups with friends that is suited for your moods. </p>
-       <span class="label label-pill label-success">Accept</span>
-       <span class="label label-pill label-danger">Decline</span>
-     </div>
-   </div>
- </div>
-</div> -->

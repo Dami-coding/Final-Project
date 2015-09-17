@@ -1,9 +1,9 @@
 angular
   .module('swingy')
-  .controller('usersController', UserController);
+  .controller('usersController', UsersController);
 
-UserController.$inject = ['User','TokenService']
-function UserController(User, TokenService){
+UsersController.$inject = ['User','TokenService']
+function UsersController(User, TokenService){
   var self = this;
 
   self.all    = [];

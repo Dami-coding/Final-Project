@@ -7,6 +7,7 @@
   <!-- EXTERNAL SCRIPTS -->
   <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"></script>
+  <script type="text/javascript" src="../bower_components/angular-filter/dist/angular-filter.min.js"></script>
   <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script type="text/javascript" src="../bower_components/angular-jwt/dist/angular-jwt.js"></script>
   <script type="text/javascript" src="./bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
@@ -22,12 +23,13 @@
   <script type="text/javascript" src="./js/services/tokenService.js"></script>
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="./js/models/user.js"></script>
-  <script type="text/javascript" src="./js/controllers/user.js"></script>
+  <script type="text/javascript" src="./js/controllers/users.js"></script>
+  <script type="text/javascript" src="./js/controllers/events.js"></script>
 </head>
 
 <body ng-controller="usersController as users">
   <div ng-include="'./templates/shared/header.html'"></div>
-  <div ui-view></div>
+  <div ui-view class="container"></div>
   <div ng-include="'./templates/shared/footer.html'"></div>
 </body>
 </html>

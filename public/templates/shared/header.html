@@ -11,23 +11,19 @@
       <li class="nav-item" ng-show="users.isLoggedIn()">
         <a class="nav-link" href="#/events/show">Events</a>
       </li>
-      <li class="nav-item" ng-hide="users.isLoggedIn()">
+      <li class="nav-item pull-right" ng-hide="users.isLoggedIn()">
         <a class="nav-link" href="#/signup">Signup</a>
       </li>
-      <li class="nav-item" ng-hide="users.isLoggedIn()">
+      <li class="nav-item pull-right" ng-hide="users.isLoggedIn()">
         <a class="nav-link" href="#/login">Login</a>
       </li>
-      <li class="nav-item" ng-show="users.isLoggedIn()">
-        Hello, {{ users.user.name }}!
+      <li class="nav-item pull-right" ng-show="users.isLoggedIn()">
+        <p>Hello, {{ users.user.name }}!</p>
       </li>
-      <li class="nav-item" ng-show="users.isLoggedIn()">
+      <li class="nav-item pull-right" ng-show="users.isLoggedIn()">
         <a class="nav-link" ng-click="users.logout()">Logout</a>
       </li>
     </ul>
-    <form class="form-inline navbar-form pull-right">
-      <input class="form-control" type="text" placeholder="Search">
-      <button class="btn btn-success-outline" type="submit">Search</button>
-    </form>
   </nav>
 </header>
 

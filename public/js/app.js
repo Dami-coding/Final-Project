@@ -1,5 +1,5 @@
 angular
-  .module('swingy', ['angular-jwt','ui.router', 'ngResource'])
+  .module('swingy', ['angular-jwt','ui.router', 'ngResource', 'angular.filter'])
   .constant('API', 'http://localhost:3000/api/')
   .config(MainRouter)
   .config(function($httpProvider) {

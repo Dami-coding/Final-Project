@@ -3,8 +3,7 @@ var app         = express();
 var bodyParser  = require('body-parser');
 var logger      = require('morgan');
 var path        = require('path');
-var morgan      = require('morgan')
-var request     = require('request');
+var morgan      = require('morgan');
 var passport    = require('passport');
 var expressJWT  = require("express-jwt");
 var config      = require("./config/config");
@@ -35,38 +34,6 @@ app.use(bodyParser.json())
 // Serving bower_components from root. Might change to public later
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(require("./controllers"));
-
-
-// To search for a list of categories/subcategories, use:
-// https://www.eventbriteapi.com/v3/categories/?token=(token) <- need to add token
-// https://www.eventbriteapi.com/v3/subcategories/?token=(token) <- need to add token
-
-// If searching by a search term, use:
-// http://localhost:3000/events/?q=dance
-
-// If searching by categories, use:
-// http://localhost:3000/events/?categories=105,103
-app.get('/events', function(req, res){
-
-  var latitude  = "51.518959";
-  var longitude = "-0.0680837";
-  var options   = {
-    // url: "https://www.eventbriteapi.com/v3/events/search/?q="+req.query.q+"&location.latitude="+latitude+"&location.longitude="+longitude+"&location.within=2mi&sort_by=distance",
-    url: "https://www.eventbriteapi.com/v3/events/search/?categories="+req.query.categories+"&location.latitude="+latitude+"&location.longitude="+longitude+"&location.within=2mi&sort_by=distance",
-        
-    headers: {
-      'Authorization': "Bearer " + process.env.EVENTBRITE_SWINGY_PERSONAL_TOKEN
-    }
-  };
-
-  request(options, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      res.status(200).send(JSON.parse(body));
-    } else {
-      res.status(500).send(JSON.parse(error));
-    }
-  })
-});
 
 // JWT access control. Important to have these before our routes!
 

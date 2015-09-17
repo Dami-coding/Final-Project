@@ -37,17 +37,4 @@ function MainRouter($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise("/");
 
-
-
-
-
- $stateProvider.customStyle = {};
- $stateProvider.turnGreen = function (){
-    $stateProvider.customStyle.colorClass = "green";
-}
-
-$stateProvider.turnBlue = function() {
-    $stateProvider.customStyle.colorClass = "blue";
-}
-
 }

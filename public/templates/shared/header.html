@@ -1,4 +1,5 @@
 <header>
+<font face="Raleway" size="4">
   <nav class="navbar navbar-light bg-faded">
     <a class="navbar-brand" href="#/landingpage/index">Swingy</a>
     <img id="icon2" src="../images/logo_icon.png" width="50">
@@ -12,8 +13,8 @@
       <li class="nav-item" ng-show="users.isLoggedIn()">
         <a class="nav-link" href="#/events/show">Events</a>
       </li>
-      <li class="nav-item" ng-show="users.isLoggedIn()">
-        <a class="nav-link" href="#/events/show">Contact</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#/contact/index">Contact</a>
       </li>
       <li class="nav-item pull-right" ng-hide="users.isLoggedIn()">
         <a class="nav-link" href="#/signup">Signup</a>
@@ -24,11 +25,12 @@
       <li class="nav-item pull-right username" ng-show="users.isLoggedIn()">
         <a><p>Hello, {{ users.user.name }}!<p></a>
       </li>
-      <li class="nav-item pull-right" ng-show="users.isLoggedIn()">
+      <li class="nav-item pull-right" ng-hide="users.isLoggedIn()">
         <a class="nav-link" ng-click="users.logout()">Logout</a>
       </li>
     </ul>
   </nav>
+  <font face="Raleway" size="12">
 </header>
 
 

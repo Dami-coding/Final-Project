@@ -35,8 +35,8 @@ function MainRouter($stateProvider, $urlRouterProvider){
       templateUrl: "../templates/events/show.html"
     })
     .state('contact', {
-      url: "/contact/show",
-      templateUrl: "../templates/contact/show.html"
+      url: "/contact/index",
+      templateUrl: "../templates/contact/index.html"
     })
 
 

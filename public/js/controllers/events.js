@@ -11,11 +11,11 @@ function EventsController($http){
   self.searching = false;
 
   var moods = {
-    happy: "104,105,103,107,108,111,114,115,106,117", 
-    fun: "116.105,110,113,109,118,119",
-    serious: "1999,2999,3001",
-    geeky: "80,56,67,102,112",
-    inspire: "101,112"
+    happy: "103,105,106,107,108,114,115", 
+    fun: "105,109,110,111,116,113,118,119",
+    serious: "101,112",
+    geeky: "102,104",
+    inspire: "113,117,199"
   }
 
   self.filter = function(mood){

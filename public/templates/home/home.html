@@ -1,7 +1,33 @@
+
+
+
+<div class="homepic" style="width: 100%; height: 400px; overflow: hidden">
+  <img class="homeimg" src="../images/homepic.jpg" width="900" height="500">
+</div>
+
+<!-- 
+<div id="switch" ng-hide=>
+    <img src="../images/swingy_face.png" width="200px"/>
+    <img src="../images/swingy_face_fun.png" width="200px"/>
+    <img src="../images/swingy_face_blink.png" width="200px"/>
+</div>
+ -->
+<script type="text/javascript">
+function swapImages(){
+    var $active = $('#switch .active');
+    var $next = ($('#switch .active').next().length > 0) ? $('#switch .active').next() : $('#switch img:first');
+    $active.fadeOut(function(){
+         $active.removeClass('active');
+         $next.fadeIn().addClass('active');
+     });
+}
+
+setInterval(swapImages, 2000);
+</script>
+
+<iframe id="forecast_embed" type="text/html" frameborder="0" height="200" width="290" src="http://forecast.io/embed/#lat=51.52024&lon=-0.07037&name=London United kingdom"></iframe>
+
 <img id="swingy" class="animated pulse"src="../images/swingy_face.png" width="200px">
-
-
-
   <div class="row animated fadeInUp">
     <h2>Let Swingy handle it</h2>
     <form ng-submit="events.search(events.query)">
@@ -18,17 +44,30 @@
 </div>
 
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a href="#" class="nav-link active">How to Use</a>
-  </li>
-  <li class="nav-item">
-    <a href="#" data-toggle="tab" "nav-link">Link</a>
-    <p>
+<h5>Create</h5>
+<p>Fill in your event details, choose your ticket types, and your page is ready!</p>
 
-    </p>
-  </li>
-  <li class="nav-item">
-    <a href="#" class="nav-link">Another link</a>
-  </li>
-</ul>
+
+
+
+<!-- 
+
+<div id="switch">
+    <img src="../images/swingy_face.png"/>
+    <img src="../images/swingy_face_fun.png"/>
+    <img src="../images/swingy_face_blink.png"/>
+</div>
+
+
+function swapImages(){
+    var $active = $('#switch .active');
+    var $next = ($('#switch .active').next().length > 0) ? $('#switch .active').next() : $('#switch img:first');
+    $active.fadeOut(function(){
+         $active.removeClass('active');
+         $next.fadeIn().addClass('active');
+     });
+}
+
+setInterval(swapImages, 5000);
+
+ -->

@@ -119,7 +119,7 @@ input{
 .about-pic {
     margin-right: 90px;
     margin-top: -500px;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 
@@ -144,7 +144,15 @@ input{
   max-width: 100%;
 }
 
+/*
+.homepic{
+  overflow: hidden;
+}
 
+.homeimg{
+  width: 100%;
+  height: 300px;
+}*/
 
 .container-full{
   width: 100%;

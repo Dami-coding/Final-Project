@@ -11,7 +11,7 @@ function Event($resource, API, $scope) {
           hasLiked = true;
           $scope.liked = 'Unlike';
           $scope.likeCount += 1;
-      } else {
+      } else { 
           hasLiked = false;
           $scope.liked = 'Like';
           $scope.likeCount -= 1;
@@ -23,10 +23,18 @@ function Event($resource, API, $scope) {
     url+':id',
     {id: '@id'}, { 
     'findByName': { method: 'POST', url: url + 'search/name'}
-    console.log("hello")
+  
     }
   );
 }
 
 
 
+function changeBG()
+{
+    var body = document.getElementsById("swingy")[0];
+    body.img.backgroundImage = "swingy_face_blink";
+    setTimeout("changeBG",3000); // Change every 30 seconds
+}
+
+window.onload = changeBG;

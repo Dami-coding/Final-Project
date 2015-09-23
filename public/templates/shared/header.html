@@ -25,7 +25,7 @@
       <li class="nav-item pull-right username" ng-show="users.isLoggedIn()">
         <a><p>Hello, {{ users.user.name }}!<p></a>
       </li>
-      <li class="nav-item pull-right" ng-hide="users.isLoggedIn()">
+      <li class="nav-item pull-right" ng-show="users.isLoggedIn()">
         <a class="nav-link" ng-click="users.logout()">Logout</a>
       </li>
     </ul>

@@ -1,10 +1,18 @@
 angular
-  .module('swingy', ['angular-jwt','ui.router', 'ngResource', 'angular.filter'])
+  .module('swingy', ['angular-jwt','ui.router', 'ngResource', 'angular.filter', 'jcs-autoValidate'])
   .constant('API', 'http://localhost:3000/api/')
   .config(MainRouter)
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   })
+  .run(function (defaultErrorMessageResolver) {
+      defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+        errorMessages['tooYoung'] = 'You must be at least {0} years old to use this site';
+        errorMessages['tooOld'] = 'You must be max {0} years old to use this site';
+        errorMessages['badUsername'] = 'Username can only contain numbers and letters and _';
+      });
+    }
+  )
 
   
 

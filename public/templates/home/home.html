@@ -6,7 +6,7 @@
 </div>
 
 
-<iframe id="forecast_embed" type="text/html" frameborder="0" height="200" width="290" src="http://forecast.io/embed/#lat=51.52024&lon=-0.07037&name=London&units=uk"></iframe>
+<iframe class="col-lg-3" id="forecast_embed" type="text/html" frameborder="0" height="200" width="290" src="http://forecast.io/embed/#lat=51.52024&lon=-0.07037&name=London&units=uk"></iframe>
 
 <section ng-controller="eventsController as events">
  <font face="Raleway" size="9">
@@ -35,7 +35,7 @@
            <h5 class="card-title">{{ event.name.text | limitTo: 10 }}</h5>
            <h6><p class="card-text">{{ event.description.text | limitTo: 70 }}</p></h6>
            <a href="{{ event.url }}" class="btn btn-primary">Book date</a>
-           <a ng-click="likeClick()" ng-init="liked='Like'; likeCount=0">{{ liked }} {{ likeCount }}</a>
+          <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
          </div>
        </div>
      </div>
@@ -44,19 +44,19 @@
 </section>
 
 <div class="col-sm-4 col-md-5 col-lg-4">
-  <img src="../images/fun.png" width="50"></a>
-  <h5>Create</h5>
-  <p>Fill in your event details, choose your ticket types, and your page is ready!</p>
+  <img src="http://4.bp.blogspot.com/-wOzR_n8K_cU/Thkozx7Y1WI/AAAAAAAAAQc/_4tf57ZS1GY/s1600/smiley-icon-complete.png" width="50"></a>
+  <h5>Mood</h5>
+  <p>What are you in the mood for... Music? Love?, Entertainments? whatever!</p>
 </div>
 <div class="col-sm-4 col-md-5 col-lg-4">
-  <img src="../images/fun.png" width="50"></a>
-  <h5>Create</h5>
-  <p>Fill in your event details, choose your ticket types, and your page is ready!</p>
+  <img src="http://i.imgur.com/ktFR7U8.png" width="50"></a>
+  <h5>Find the Event</h5>
+  <p>Based on how you feel. Choose what mood state you're currently in and get inspired!</p>
 </div>
 <div class="col-sm-4 col-md-5 col-lg-4">
-  <img src="../images/fun.png" width="50"></a>
-  <h5>Create</h5>
-  <p>Fill in your event details, choose your ticket types, and your page is ready!</p>
+  <img src="http://www.silviocicchi.com/pizzachef/wp-content/uploads/2014/12/go-icon.jpeg" width="50"></a>
+  <h5>Go for it</h5>
+  <p>You have found what suits your needs, what are you wait for, go ahead and book the date!</p>
 </div>
 
 

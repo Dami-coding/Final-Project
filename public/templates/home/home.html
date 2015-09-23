@@ -8,19 +8,78 @@
 
 <!-- <iframe id="forecast_embed" type="text/html" frameborder="0" height="200" width="290" src="http://forecast.io/embed/#lat=51.52024&lon=-0.07037&name=London&units=uk"></iframe>
  -->
-<div class="searchbox row animated fadeInUp">
-  <h2>Let Swingy handle it</h2>
-  <form ng-submit="events.search(events.query)">
-    <div class="col-lg-12">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Find an event!" ng-model="events.query">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">Go!</button>
-        </span>
-      </div>
-    </div>
-  </form>
-</div>
+  <section ng-controller="eventsController as events">
+   <font face="Raleway" size="12">
+     <div class="searchbox row animated fadeInUp">
+       <h2>Let Swingy handle it</h2>
+       <form ng-submit="events.search(events.query)">
+         <div class="col-lg-6">
+           <div class="input-group">
+             <input type="text" class="form-control" placeholder="Find an event!" ng-model="events.query">
+             <span class="input-group-btn">
+               <button class="btn btn-secondary" type="button">Go!</button>
+             </span>
+           </div>
+         </div>
+       </form>
+     </div>
+   </font>
+
+   <font face="Raleway" size="3">
+     <div class="moods animated fadeInUp">
+       <a ng-click="events.filter('happy')"><img src="../images/happy.png" width="50"></a>
+       <a ng-click="events.filter('fun')"><img src="../images/fun.png" width="50"></a>
+       <a ng-click="events.filter('serious')"><img src="../images/neutral.png" width="50"></a>
+       <a ng-click="events.filter('geeky')"><img src="../images/geeky.png" width="50"></a>
+       <a ng-click="events.filter('inspire')"><img src="../images/sad.png" width="50"></a>
+     </div>
+     <div class="container-fluid">
+       <div class="progress" ng-show="events.searching">
+         <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+           <span class="sr-only">45% Complete</span>
+         </div>
+       </div>
+       <div class="row animated fadeInUp">
+         <div class="card col-sm-4 col-md-5 col-lg-3" ng-repeat="event in events.all | unique: 'name.text'">
+           <img class="card-img-top" ng-src="{{ event.logo.url }}" alt="{{ event.name.text }}">
+           <div class="card-block">
+             <h4 class="card-title">{{ event.name.text | limitTo: 10 }}</h4>
+             <p class="card-text">{{ event.description.text | limitTo: 100 }}</p>
+             <a href="{{ event.url }}" class="btn btn-primary">Book date</a>
+             <a ng-click="likeClick()" ng-init="liked='Like'; likeCount=0">{{ liked }} {{ likeCount }}</a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </font>
+ </section>
 
 <h5>Create</h5>
 <p>Fill in your event details, choose your ticket types, and your page is ready!</p>
+
+
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#home" role="tab" data-toggle="tab">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home"><p>Fill in yoidjo;ds;gnur event details, choose your ticket types, and your page is ready!</p></div>
+  <div role="tabpanel" class="tab-pane" id="profile"><p>event details, choose your ticket types, and your page is ready!</p></div>
+  <div role="tabpanel" class="tab-pane" id="messages"><p> choose your ticket types, and your page is ready!</p></div>
+  <div role="tabpanel" class="tab-pane" id="settings">...</div>
+</div>

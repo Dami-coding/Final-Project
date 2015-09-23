@@ -16,18 +16,14 @@ function Event($resource, API, $scope) {
           $scope.liked = 'Like';
           $scope.likeCount -= 1;
       }
-    }
+    };
 
 
   return $resource(
     url+':id',
-    {id: '@id'},
-    { 'update':    { method: 'PUT' },
-        'save':    { method: 'POST' },
-       'query':    { method: 'GET', isArray: true},
-      'remove':    { method: 'DELETE' },
-      'delete':    { method: 'DELETE' },
-       'like' :    { method: 'POST', url: url + 'like'},
+    {id: '@id'}, { 
+    'findByName': { method: 'POST', url: url + 'search/name'}
+    console.log("hello")
     }
   );
 }

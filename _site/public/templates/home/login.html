@@ -1,0 +1,19 @@
+<section ng-hide="users.isLoggedIn()" class="animated slideInRight">
+<div class="col-md-4, col-md-4 col-lg-6">
+<h2>Login</h2>
+  <hr>
+  
+<form id="signin" ng-hide="users.isLoggedIn()" ng-submit="users.signin()" class="form-vertical">
+  <fieldset class="form-group">
+    <label for="nameField">Username</label>
+    <input type="name" class="form-control" id="nameField" placeholder="Enter username" ng-model="users.user.name">
+    <small class="text-muted">Your detailed is confidential</small>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="passwordField">Password</label>
+    <input type="password" class="form-control" id="passwordField" placeholder="Password" ng-model="users.user.password">
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+</section>

@@ -1,0 +1,37 @@
+<section ng-hide="users.isLoggedIn()">
+  <h2>SignUp</h2>
+  <hr>
+
+
+<section class="animated slideInRight">
+<form novalidate="novalidate" id="signup" ng-hide="users.isLoggedIn()" ng-submit="users.signup()" class="form-horizontal">
+<fieldset class="form-group">
+  <label for="nameField">Name</label>
+  <input type="text" class="form-control" id="nameField" placeholder="Enter name" ng-model="users.user.name" id="name" required="required">
+</fieldset>
+  <fieldset class="form-group">
+    <label for="emailField">Email</label>
+    <input type="email" class="form-control" id="emailField" placeholder="Enter email" ng-model="users.user.email" id="email" required="required">
+    <small class="text-muted">Your detailed is confidential</small>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="passwordField">Password</label>
+    <input type="password" class="form-control" id="passwordField" placeholder="Password" ng-model="users.user.password" id="email" required="required" ng-minlength="5">
+  </fieldset>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div ng-show="users.isLoggedIn()" class="alert alert-success" role="alert">
+  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+</div>
+
+</section>

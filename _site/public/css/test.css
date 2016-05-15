@@ -1,0 +1,24 @@
+div {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    -webkit-animation-iteration-count: 30;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 7s;
+    animation-name: example;
+    animation-duration: 7s;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+

@@ -1,0 +1,34 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "WDI Project 3",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dami-coding/Final-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dami-coding/Final-Project/issues"
+  },
+  "homepage": "https://github.com/Dami-coding/Final-Project#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-jwt": "^3.1.0",
+    "jsonwebtoken": "^5.0.5",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.6",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "request": "^2.61.0"
+  }
+}
